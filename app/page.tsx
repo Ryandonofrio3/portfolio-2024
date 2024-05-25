@@ -1,113 +1,122 @@
-import Image from "next/image";
+"use client";
+import { BackgroundBeams } from "./ui/bg-beams";
+import { Button } from "./ui/button";
+import { TypewriterEffectDemo } from "./components/typewriter";
+import { TracingBeam } from "./ui/tracing-beam";
+import { HoverEffect } from "./ui/card-hover";
+import Footer from "./components/footer";
+
+import { AiOutlinePython } from "react-icons/ai";
+import { RiNextjsLine, RiTailwindCssFill } from "react-icons/ri";
+import { FaRProject } from "react-icons/fa";
+import { GiDna1 } from "react-icons/gi";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { BackgroundGradient } from "./components/background-gradient";
+import { GlowingStarsBackgroundCard } from "./components/glowing-stars";
+import { CanvasRevealEffectDemo } from "./components/hover-effect";
+
 
 export default function Home() {
+
+  const hoverItems = [
+    {
+      title: "Python",
+      description: "",
+      icon_before: <AiOutlinePython className="text-6xl text-center mx-auto text-white" />,
+      icon_after: <AiOutlinePython className="text-6xl text-center mx-auto text-black" />,
+    },
+    {
+      title: "NextJS",
+      description: "",
+      icon: <RiNextjsLine className="text-6xl text-center mx-auto text-white" />,
+    },
+    {
+      title: "TailwindCSS",
+      description: "",
+      icon: <RiTailwindCssFill className="text-6xl text-center mx-auto text-white" />,
+    },
+    {
+      title: "R",
+      description: "",
+      icon: <FaRProject className="text-6xl text-center mx-auto text-white" />,
+    },
+    {
+      title: "CRISPR Engineering",
+      description: "",
+      icon: <GiDna1 className="text-6xl text-center mx-auto text-white" />,
+    },
+    {
+      title: "PostgreSQL",
+      description: "",
+      icon: <BiLogoPostgresql className="text-6xl text-center mx-auto text-white" />,
+    },
+    
+  ];
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <main>
+      <div className="h-[50rem] w-full dark:bg-white bg-black dark:bg-grid-small-black/[0.2] bg-grid-small-white/[0.2] relative flex items-center justify-center">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-white bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,white)]"></div>
+        <TypewriterEffectDemo />
+        <BackgroundBeams />
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="text-white text-6xl font-bold ml-64">
+        Experience
       </div>
+      <TracingBeam>
+        <div className="text-center text-white bg-black">
+          <div className="mt-10">
+            <h3 className="text-2xl font-semibold">Maximus</h3>
+            <p className="italic">AI Software Engineer | June 2024 – Present</p>
+            <ul className="list-disc list-inside mt-4 text-left">
+              <li>Working on Internal AI-focused Tooling for Healthcare</li>
+            </ul>
+          </div>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="mt-10">
+            <h3 className="text-2xl font-semibold">Dr. Craig Montell Lab</h3>
+            <p className="italic">Graduate Student Researcher | Aug 2021 – Jan 2024</p>
+            <ul className="list-disc list-inside mt-4 text-left">
+              <li>Independently engineered neural networks for detection and classification of mosquito feeding behavior, playing a crucial role in advancing lab research</li>
+              <li>Led a comprehensive project conducting 500,000+ Monte Carlo simulations to model the dynamics of mosquitoes in naturalistic environments, informing vector control strategies in two ongoing studies</li>
+              <li>Utilized CRISPR-Cas9 to induce genetic mutations in Mosquitoes and Fruit flies</li>
+            </ul>
+          </div>
+          <div className="mt-10">
+            <h3 className="text-2xl font-semibold">ResearchRadar</h3>
+            <p className="italic">Co-Founder | Feb 2023 – Dec 2023</p>
+            <ul className="list-disc list-inside mt-4 text-left">
+              <li>Launched and strategically grew an AI-driven platform offering personalized, real-time updates on scientific literature personalized to individual interests and subfield</li>
+              <li>Attracted and retained 400+ users in targeted academic communities within the first three months</li>
+            </ul>
+          </div>
+          <div className="mt-10">
+            <h3 className="text-2xl font-semibold">Longevity Clinic</h3>
+            <p className="italic">AI Software Engineer and Consultant | Oct 2023 – Jan 2024</p>
+            <ul className="list-disc list-inside mt-4 text-left">
+              <li>Drove the end-to-end development of an AI-powered chatbot for life sciences, guiding the project from initial concept to deployment in a production environment</li>
+              <li>Solely responsible for the conception and implementation of an advanced Retrieval Augmented Generation (RAG) pipeline, managing and processing over 10,000 documents, significantly enhancing chatbot responsiveness and accuracy</li>
+            </ul>
+          </div>
       </div>
-    </main>
-  );
+    </TracingBeam>
+    <div className="text-white text-6xl font-bold ml-64 mt-64">
+      Skills and Projects
+    </div>
+    <div className="mt-10">
+        <CanvasRevealEffectDemo
+      
+      />
+    </div>
+    <div className="mt-10 text-white text-6xl font-bold ml-64">
+      {/* <CanvasRevealEffect
+        animationSpeed={5.1}
+        containerClassName="bg-emerald-900"
+      /> */}
+    </div>
+    <div className="mt-10">
+      <Footer />
+    </div>
+  </main>
+);
 }
